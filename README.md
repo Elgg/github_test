@@ -68,3 +68,39 @@ Fixing a bug
     Select your new branch on the web page for your Github fork. Then click the
     Pull Request button. Fill out the title and description for your changes.
     Include the ticket number from Elgg's bug tracker (http://trac.elgg.org/).
+
+To work on a second bug, return to the master branch *git checkout master* and
+start the instructions at step 5. The reason you return to the master branch is
+so that the commits for your first bug fix do not get included in your branch
+for the second bug fix.
+
+Updating your master branch
+---------------------------
+As you have been fixing bugs and adding features, development on the master branch
+of Elgg's repository has continued. It is best to update your master before you
+create a new branch and here is how.
+
+ 1. Add the main Elgg repository as a remote
+
+    ```
+    git remote add upstream git://github.com/Elgg/github_test.git
+    ```
+
+ 2. Pull the latest changes into your local master
+
+    ```
+    git pull --rebase upstream master
+    ```
+
+ 3. Push those changes to your github fork
+
+   ```
+   git push origin master
+   ```
+
+General hints
+-------------
+ * Do not make changes in the master branch of your local repository. Make your
+   changes in a branch.
+ * Before checking out a branch, make sure you have committed any changes using
+   *git status*.
