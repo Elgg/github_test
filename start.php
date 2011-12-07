@@ -1,6 +1,6 @@
 <?php
 /**
- *
+ * The github test plugin
  */
 
 elgg_register_event_handler('init', 'system', 'github_test_init');
